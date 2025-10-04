@@ -53,6 +53,13 @@ import cat4 from "../assets/cat-4.png";
 import cat5 from "../assets/cat-5.png";
 import cat6 from "../assets/cat-6.png";
 
+import affiliate1 from "../assets/AMCHAM.png";
+import affiliate2 from "../assets/NCE.png";
+import affiliate3 from "../assets/SLGJA.png";
+import affiliate4 from "../assets/cccnew.png";
+import affiliate5 from "../assets/ica.png";
+
+
 const categories = [
   { name: "RINGS", img: cat1 },
   { name: "NECKLACES", img: cat2 },
@@ -64,15 +71,23 @@ const categories = [
 
 const imageLogos = [
   {
-    src: top1,
+    src: affiliate1,
     alt: "Company 1",
   },
   {
-    src: top2,
+    src: affiliate2,
     alt: "Company 2",
   },
   {
-    src: top3,
+    src: affiliate3,
+    alt: "Company 3",
+  },
+  {
+    src: affiliate4,
+    alt: "Company 3",
+  },
+  {
+    src: affiliate5,
     alt: "Company 3",
   },
 ];
@@ -589,13 +604,13 @@ export default function Home() {
         {/* Testimonials section - using the global state */}
         <Testimonials />
 
-        <div className="bg-white pt-20 max-w-full mx-auto">
+        <div className="bg-white pt-20 max-w-full mx-auto my-4">
           <h1 
           style={{ fontFamily: "Baskervville, sans-serif" }}
           className="text-center text-5xl font-medium tracking-widest mb-12 font-serif">Affiliates</h1>
 
           <div
-            className="max-w-9xl mx-auto "
+            className="max-w-9xl mx-auto mt-20 cursor-pointer "
             style={{
               height: "240px",
               position: "relative",
@@ -606,8 +621,8 @@ export default function Home() {
               logos={imageLogos}
               speed={60}
               direction="left"
-              logoHeight={200}
-              gap={80}
+              logoHeight={150}
+              gap={100}
               pauseOnHover
               scaleOnHover
               fadeOut

@@ -99,7 +99,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full fixed bg-white z-50 py-2 border-b border-gray-200">
+      <header className="w-full fixed bg-[#FFFEFA] z-50 py-2 border-b border-gray-200">
         {/* Top Row */}
         <div 
         style={{ fontFamily: "Baskervville, sans-serif" }}

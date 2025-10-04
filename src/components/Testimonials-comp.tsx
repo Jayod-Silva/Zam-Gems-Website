@@ -43,7 +43,7 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="bg-white py-10">
+    <div className="bg-gray-50 py-15 ">
       <section className="max-w-3xl mx-auto px-4 text-center py-10 ">
         <h3
           style={{ fontFamily: "Baskervville, sans-serif" }}
