@@ -64,15 +64,15 @@ const categories = [
 
 const imageLogos = [
   {
-    src: "src/assets/top1.png",
+    src: top1,
     alt: "Company 1",
   },
   {
-    src: "src/assets/top2.png",
+    src: top2,
     alt: "Company 2",
   },
   {
-    src: "src/assets/top3.png",
+    src: top3,
     alt: "Company 3",
   },
 ];

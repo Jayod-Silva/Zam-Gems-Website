@@ -1,45 +1,48 @@
-import { FaFacebook, FaYoutube, FaTiktok, FaInstagram} from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaTiktok, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1F190A] text-[F1E5C6] mt-10 py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[#1A1307] text-[#F1E5C6] py-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Info Section */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">ZAM GEMS</h4>
-          <p className="text-sm">
-            Exquisite gemstones and bespoke jewelry crafted with passion and heritage.
-          </p>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">About Us</a></li>
-            <li><a href="#" className="hover:text-gray-900">Shop</a></li>
-            <li><a href="#" className="hover:text-gray-900">Showrooms</a></li>
-            <li><a href="#" className="hover:text-gray-900">Contact Us</a></li>
+          <h3 className="text-2xl font-serif mb-6">Info</h3>
+          <ul className="space-y-3 text-sm">
+            <li><a href="#" className="hover:underline">About Us & History</a></li>
+            <li><a href="#" className="hover:underline">Testimony</a></li>
+            <li><a href="#" className="hover:underline">The Zam Vault</a></li>
+            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
           </ul>
         </div>
+
+        {/* Support Section */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">Customer Service</h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-gray-900">Find a Store</a></li>
-            <li><a href="#" className="hover:text-gray-900">Returns & Exchanges</a></li>
-            <li><a href="#" className="hover:text-gray-900">Shipping Info</a></li>
-            <li><a href="#" className="hover:text-gray-900">FAQs</a></li>
+          <h3 className="text-2xl font-serif mb-6">Support</h3>
+          <ul className="space-y-3 text-sm">
+            <li><a href="#" className="hover:underline">Contact Us</a></li>
+            <li><a href="#" className="hover:underline">Shipping & Returns</a></li>
+            <li><a href="#" className="hover:underline">FAQs</a></li>
+            <li><a href="#" className="hover:underline">Jewelry Care</a></li>
+            <li><a href="#" className="hover:underline">Ring Size Guide</a></li>
           </ul>
         </div>
+
+        {/* Connect Section */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
-          <div className="flex space-x-4 mt-4">
-            <a href="#" aria-label="Facebook" className="hover:text-gray-900"><FaFacebook/></a>
-            <a href="#" aria-label="Instagram" className="hover:text-gray-900"><FaInstagram /></a>
-            <a href="#" aria-label="Tiktok" className="hover:text-gray-900"><FaTiktok  /></a>
-            <a href="#" aria-label="Youtube" className="hover:text-gray-900"><FaYoutube /></a>
+          <h3 className="text-2xl font-serif mb-6">Connect With Us</h3>
+          <div className="flex space-x-6 mt-2 text-3xl">
+            <a href="#" className="hover:opacity-80"><FaFacebook /></a>
+            <a href="#" className="hover:opacity-80"><FaInstagram /></a>
+            <a href="#" className="hover:opacity-80"><FaTiktok /></a>
+            <a href="#" className="hover:opacity-80"><FaYoutube /></a>
           </div>
         </div>
       </div>
-      <div className="mt-10 text-center text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Zam Gems. All rights reserved.
+
+      {/* Footer Bottom */}
+      <div className="mt-10 border-t border-[#2A220E] pt-6 text-center text-sm text-[#D6C9A6]">
+        © {new Date().getFullYear()} ZamGems. Designed By Ceylon Innovation
       </div>
     </footer>
   );
