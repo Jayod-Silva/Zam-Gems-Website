@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { IoLocationOutline, IoSearchOutline, IoChevronDown } from "react-icons/io5";
 import logo from "/src/assets/header-logo.png";
+import navbespoke from "src/assets/nav-Bespoke.png";
 
 const navLinks = [
   { name: "About Us", href: "/gem" }, // Now points to your gem page
@@ -49,7 +50,7 @@ const shopDropdown = [
   },
   {
     title: "Custom",
-    image: "/src/assets/nav-Bespoke.png",
+    image: navbespoke,
     items: [
       { name: "Design Your Own", href: "/gem" },
       { name: "Create an exquisite piece that's uniquely yours.", href: "/gem" }
