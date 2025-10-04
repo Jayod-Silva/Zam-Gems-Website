@@ -59,7 +59,6 @@ import affiliate3 from "../assets/SLGJA.png";
 import affiliate4 from "../assets/cccnew.png";
 import affiliate5 from "../assets/ica.png";
 
-
 const categories = [
   { name: "RINGS", img: cat1 },
   { name: "NECKLACES", img: cat2 },
@@ -238,7 +237,7 @@ export default function Home() {
       setCurrentSlide((prev) =>
         prev === featuredItems.length - 1 ? 0 : prev + 1
       );
-    }, 7000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -547,7 +546,7 @@ export default function Home() {
                         {/* Product Image */}
                         <div className="aspect-square bg-gray-100 flex items-center justify-center">
                           <img
-                          loading="lazy"
+                            loading="lazy"
                             src={product.image}
                             alt={product.name}
                             className="w-full h-full object-cover"
@@ -605,9 +604,12 @@ export default function Home() {
         <Testimonials />
 
         <div className="bg-white pt-20 max-w-full mx-auto my-4">
-          <h1 
-          style={{ fontFamily: "Baskervville, sans-serif" }}
-          className="text-center text-5xl font-medium tracking-widest mb-12 font-serif">Affiliates</h1>
+          <h1
+            style={{ fontFamily: "Baskervville, sans-serif" }}
+            className="text-center text-5xl font-medium tracking-widest mb-12 font-serif"
+          >
+            Affiliates
+          </h1>
 
           <div
             className="max-w-9xl mx-auto mt-20 cursor-pointer "
@@ -631,10 +633,8 @@ export default function Home() {
             />
           </div>
         </div>
-
       </div>
       <Footer />
-      
     </div>
   );
 }
