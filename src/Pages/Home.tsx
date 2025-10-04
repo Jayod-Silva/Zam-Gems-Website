@@ -46,30 +46,34 @@ import top6 from "../assets/top6.png";
 import top7 from "../assets/top7.png";
 import top8 from "../assets/top8.png";
 
+import cat1 from "../assets/cat-1.png";
+import cat2 from "../assets/cat-2.png";
+import cat3 from "../assets/cat-3.png";
+import cat4 from "../assets/cat-4.png";
+import cat5 from "../assets/cat-5.png";
+import cat6 from "../assets/cat-6.png";
+
 const categories = [
-  { name: "RINGS", img: "src/assets/cat-1.jpg" },
-  { name: "NECKLACES", img: "src/assets/cat-2.png" },
-  { name: "PENDANTS", img: "src/assets/cat-3.png" },
-  { name: "BRACELETS", img: "src/assets/cat-4.png" },
-  { name: "BANGLES", img: "src/assets/cat-5.jpg" },
-  { name: "EARRINGS", img: "src/assets/cat-6.jpg" },
+  { name: "RINGS", img: cat1 },
+  { name: "NECKLACES", img: cat2 },
+  { name: "PENDANTS", img: cat3 },
+  { name: "BRACELETS", img: cat4 },
+  { name: "BANGLES", img: cat5 },
+  { name: "EARRINGS", img: cat6 },
 ];
 
 const imageLogos = [
   {
     src: "src/assets/top1.png",
     alt: "Company 1",
-    href: "https://company1.com",
   },
   {
     src: "src/assets/top2.png",
     alt: "Company 2",
-    href: "https://company2.com",
   },
   {
     src: "src/assets/top3.png",
     alt: "Company 3",
-    href: "https://company3.com",
   },
 ];
 
@@ -528,6 +532,7 @@ export default function Home() {
                         {/* Product Image */}
                         <div className="aspect-square bg-gray-100 flex items-center justify-center">
                           <img
+                          loading="lazy"
                             src={product.image}
                             alt={product.name}
                             className="w-full h-full object-cover"
