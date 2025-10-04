@@ -121,6 +121,7 @@ export default function Header() {
               src="/src/assets/header-logo.png"
               alt="Zam Gems Logo"
               className="h-auto w-[180px] md:w-[300px] object-contain"
+              loading="lazy"
             />
           </Link>
 

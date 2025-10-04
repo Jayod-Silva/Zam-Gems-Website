@@ -302,6 +302,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="absolute md:mt-20 left-0 top-10 w-full overflow-hidden h-[600px] md:h-[820px]">
           <img
+            loading="lazy"
             src={heroImg}
             alt="Beautiful gemstone necklace on wooden background"
             className="w-full h-[600px] md:h-[820px] object-cover object-center"
@@ -472,6 +473,7 @@ export default function Home() {
         {/* Bespoke Section */}
         <section className="relative bg-black text-white rounded-md overflow-hidden max-w-full mx-auto">
           <img
+            loading="lazy"
             src="src/assets/bespoke.png"
             alt="Bespoke jewelry ring with diamonds and emerald"
             className="w-full h-200 object-cover opacity-80"
