@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { IoLocationOutline, IoSearchOutline, IoChevronDown } from "react-icons/io5";
 import logo from "/src/assets/header-logo.png";
-import navbespoke from "src/assets/nav-Bespoke.png";
+import navbespoke from "../assets/nav-Bespoke.png";
 
 const navLinks = [
   { name: "About Us", href: "/gem" }, // Now points to your gem page
