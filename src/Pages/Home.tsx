@@ -41,10 +41,10 @@ import top1 from "../assets/top1.png";
 import top2 from "../assets/top2.png";
 import top3 from "../assets/top3.png";
 import top4 from "../assets/top4.png";
-import top5 from "../assets/top5.jpg";
-import top6 from "../assets/top6.jpg";
-import top7 from "../assets/top7.jpg";
-import top8 from "../assets/top8.jpg";
+import top5 from "../assets/top5.png";
+import top6 from "../assets/top6.png";
+import top7 from "../assets/top7.png";
+import top8 from "../assets/top8.png";
 
 const categories = [
   { name: "RINGS", img: "src/assets/cat-1.jpg" },
