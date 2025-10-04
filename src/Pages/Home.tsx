@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
 import heroImg from "../assets/hero-img.png";
+import bespokeImg from "../assets/bespoke.png";
 import Navbar from "../components/Header";
 import Testimonials from "../components/Testimonials-comp";
 import LogoLoop from "../components/Logoloop";
@@ -474,7 +475,7 @@ export default function Home() {
         <section className="relative bg-black text-white rounded-md overflow-hidden max-w-full mx-auto">
           <img
             loading="lazy"
-            src="src/assets/bespoke.png"
+            src={bespokeImg}
             alt="Bespoke jewelry ring with diamonds and emerald"
             className="w-full h-200 object-cover opacity-80"
           />

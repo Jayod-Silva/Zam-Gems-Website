@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { IoLocationOutline, IoSearchOutline, IoChevronDown } from "react-icons/io5";
+import logo from "/src/assets/header-logo.png";
 
 const navLinks = [
   { name: "About Us", href: "/gem" }, // Now points to your gem page
@@ -118,7 +119,7 @@ export default function Header() {
             onClick={handleLinkClick}
           >
             <img
-              src="/src/assets/header-logo.png"
+              src={logo}
               alt="Zam Gems Logo"
               className="h-auto w-[180px] md:w-[300px] object-contain"
               loading="lazy"
