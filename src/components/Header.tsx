@@ -118,7 +118,7 @@ export default function Header() {
             onClick={handleLinkClick}
           >
             <img
-              src="/src/assets/header-logo.svg"
+              src="/src/assets/header-logo.png"
               alt="Zam Gems Logo"
               className="h-auto w-[180px] md:w-[300px] object-contain"
             />
