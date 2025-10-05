@@ -418,7 +418,7 @@ export default function Home() {
                       ></p>
 
                       <p
-                        className="mt-7 text-lg md:text-md max-w-md"
+                        className="mt-7 text-lg md:text-1xl max-w-md"
                         style={{ fontFamily: "Montserrat, sans-serif" }}
                       >
                         {item.description}
