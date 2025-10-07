@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import Gem from './Pages/gems';
+import About from './Pages/About';
+import Testimonials from './Pages/Testimonials';
+import Vaulet from './Pages/zamVaulet';
 
 function App() {
   return (
@@ -11,11 +13,11 @@ function App() {
           <Route path="/" element={<Home />} />
           
           {/* About Us page - points to your gem.tsx */}
-          <Route path="/gem" element={<Gem />} />
+          <Route path="/About" element={<About />} />
           
           {/* Add other routes as needed */}
-          <Route path="/testimonial" element={<div>Testimonial Page</div>} />
-          <Route path="/the-vault" element={<div>The Vault Page</div>} />
+          <Route path="/testimonial" element={<Testimonials />} />
+          <Route path="/the-vault" element={<Vaulet />} />
           <Route path="/shop" element={<div>Shop Page</div>} />
           <Route path="/showrooms" element={<div>Showrooms Page</div>} />
           <Route path="/contact-us" element={<div>Contact Us Page</div>} />

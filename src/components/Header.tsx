@@ -7,9 +7,9 @@ import logo from "/src/assets/header-logo.png";
 import navbespoke from "../assets/nav-Bespoke.png";
 
 const navLinks = [
-  { name: "About Us", href: "/gem" }, // Now points to your gem page
-  { name: "Testimonial", href: "/testimonial" },
-  { name: "The Vault", href: "/the-vault" },
+  { name: "About Us", href: "/About" }, // Now points to your gem page
+  { name: "Testimonial", href: "/Testimonial" },
+  { name: "The Zam Vault", href: "/the-vault" },
   { name: "Shop", href: "/shop" },
   { name: "Showrooms", href: "/showrooms" },
 ];
@@ -18,43 +18,43 @@ const shopDropdown = [
   {
     title: "Gems",
     items: [
-      { name: "Alexandrites", href: "/gem" },
-      { name: "Blue Sapphires", href: "/gem" },
-      { name: "Mixed Sapphires", href: "/gem" },
-      { name: "Padparadscha", href: "/gem" },
-      { name: "Rubies", href: "/gem" },
-      { name: "Cats Eye", href: "/gem" }
+      { name: "Alexandrites", href: "#" },
+      { name: "Blue Sapphires", href: "#" },
+      { name: "Mixed Sapphires", href: "#" },
+      { name: "Padparadscha", href: "#" },
+      { name: "Rubies", href: "#" },
+      { name: "Cats Eye", href: "#" }
     ],
   },
   {
     title: "Jewelry",
     items: [
-      { name: "Rings", href: "/gem" },
-      { name: "Necklaces", href: "/gem" },
-      { name: "Earrings", href: "/gem" },
-      { name: "Bracelets", href: "/gem" },
-      { name: "Pendants", href: "/gem" }
+      { name: "Rings", href: "#" },
+      { name: "Necklaces", href: "#" },
+      { name: "Earrings", href: "#" },
+      { name: "Bracelets", href: "#" },
+      { name: "Pendants", href: "#" }
     ],
   },
   {
     title: "By Collection",
     items: [
-      { name: "Salt & Sapphire", href: "/gem" },
-      { name: "Sunsphill", href: "/gem" },
-      { name: "In Bloom", href: "/gem" },
-      { name: "Halo'ed", href: "/gem" },
-      { name: "Evergreen", href: "/gem" },
-      { name: "Aquamarine", href: "/gem" },
-      { name: "Under $1000", href: "/gem" }
+      { name: "Salt & Sapphire", href: "#" },
+      { name: "Sunsphill", href: "#" },
+      { name: "In Bloom", href: "#" },
+      { name: "Halo'ed", href: "#" },
+      { name: "Evergreen", href: "#" },
+      { name: "Aquamarine", href: "#" },
+      { name: "Under $1000", href: "#" }
     ],
   },
   {
     title: "Custom",
     image: navbespoke,
     items: [
-      { name: "Design Your Own", href: "/gem" },
-      { name: "Create an exquisite piece that's uniquely yours.", href: "/gem" }
+      { name: "Design Your Own", href: "/gem" }
     ],
+    description: "Create an exquisite piece that's uniquely yours."
   },
 ];
 
@@ -99,7 +99,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full fixed bg-[#FFFEFA] z-50 py-2 border-b border-gray-200">
+      <header className="w-full fixed bg-[#FFFEFA] z-50 py-2 border-b border-gray-200 shadow-md">
         {/* Top Row */}
         <div 
         style={{ fontFamily: "Baskervville, sans-serif" }}
@@ -175,7 +175,7 @@ export default function Header() {
                 {shopDropdownOpen && (
                   <div
                     ref={dropdownRef}
-                    className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[90vw] max-w-6xl bg-white shadow-2xl border border-gray-200 rounded-lg z-50"
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[90vw] max-w-6xl bg-[#FFFEFA] shadow-2xl border border-gray-200 rounded-lg z-50"
                   >
                     <div className="flex w-full">
                       {shopDropdown.map((col, idx) => (
@@ -193,12 +193,12 @@ export default function Header() {
                               />
                             )}
                           </div>
-                          <ul className="space-y-2 mt-7">
+                          <ul className="space-y-2 mt-7 ">
                             {col.items.map((item, i) => (
                               <li key={i}>
                                 <Link
-                                  to={item.href}
-                                  className="block px-2 py-1 rounded hover:text-yellow-600 cursor-pointer transition-colors"
+                                  to={item.href ?? "#"}
+                                  className="block px-2 py-1 mb-2 rounded hover:text-yellow-600 cursor-pointer transition-colors"
                                   onClick={handleLinkClick}
                                 >
                                   {item.name}
@@ -206,6 +206,9 @@ export default function Header() {
                               </li>
                             ))}
                           </ul>
+                          {col.description && (
+                              <span className="text-gray-900 text-sm fony-italic">{col.description}</span>
+                            )}
                         </div>
                       ))}
                     </div>
