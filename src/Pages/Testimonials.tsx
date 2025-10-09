@@ -73,7 +73,9 @@ const ZamFamilyTribute: React.FC = () => {
               <div className="w-[500px] h-auto relative">
                 <img src={item.img} className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-regular mt-5 text-justify mb-2 leading-snug">
+              <h3 
+              style={{ fontFamily: "Monserret, sans-serif" }}
+              className="font-regular mt-5 text-justify mb-2 leading-snug">
                 <span className="text-gray-900 font-bold">{item.title}</span> {item.desc}
               </h3>
             </div>
@@ -90,7 +92,7 @@ const ZamFamilyTribute: React.FC = () => {
             />
           </div>
           <p 
-           style={{ fontFamily: "Monserret, sans-serif" }}
+          style={{ fontFamily: "Monserret, sans-serif" }}
           className="text-md text-gray-600 mt-3 max-w-md mx-auto">
             Received following{" "}
             <span className="font-semibold text-black">Hillary Clinton’s</span> visit to

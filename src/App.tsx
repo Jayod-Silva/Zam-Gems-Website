@@ -3,6 +3,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Testimonials from './Pages/Testimonials';
 import Vaulet from './Pages/zamVaulet';
+import Showroom from './Pages/Showroom';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/testimonial" element={<Testimonials />} />
           <Route path="/the-vault" element={<Vaulet />} />
           <Route path="/shop" element={<div>Shop Page</div>} />
-          <Route path="/showrooms" element={<div>Showrooms Page</div>} />
+          <Route path="/showrooms" element={<Showroom/>} />
           <Route path="/contact-us" element={<div>Contact Us Page</div>} />
           <Route path="/find-store" element={<div>Find a Store Page</div>} />
         </Routes>

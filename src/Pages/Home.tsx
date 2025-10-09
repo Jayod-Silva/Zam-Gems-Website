@@ -167,7 +167,7 @@ const legacyItems = [
   },
 ];
 
-// Mock product data for Top Picks section
+// Top Picks section
 const topPicksProducts = [
   {
     id: 1,

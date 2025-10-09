@@ -1,11 +1,6 @@
 import React, { useState, type JSX } from "react";
 import Navbar from "../components/Header";
 import Footer from "../components/Footer";
-import { SlArrowDown } from "react-icons/sl";
-
-// VaultPage.tsx
-// React + TypeScript + Tailwind CSS single-file page component
-// Place gem images in public/images/ with names: ruby.jpg, emerald.jpg, padparadscha.jpg, ceylon.jpg, semi.jpg, cats-eye.jpg, map-gems.png, hero-ring.png
 
 type Gem = {
   id: string;
@@ -67,7 +62,7 @@ const GEMS: Gem[] = [
 ];
 
 export default function VaultPage(): JSX.Element {
-  const [selected, setSelected] = useState<Gem | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
 
   return (
     <div>
@@ -90,7 +85,7 @@ export default function VaultPage(): JSX.Element {
                 </span>
               </h1>
 
-              <div className=" absolute flex-1 hidden lg:block right-0 bottom-10">
+              <div className="absolute flex-1 hidden lg:block right-0 bottom-10">
                 <img
                   src="src/assets/vaulethero.png"
                   alt="gem rings"
@@ -135,10 +130,11 @@ export default function VaultPage(): JSX.Element {
         </section>
 
         {/* Two-column section */}
-        <section className="max-w-6xl mx-auto px-6 mt-12 py-12">
+        <section className="max-w-6xl mx-auto px-6 mt-12 py-16">
           <div
-          style={{ fontFamily: "Baskervville, sans-serif" }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            style={{ fontFamily: "Baskervville, sans-serif" }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+          >
             <div>
               <h2
                 style={{ fontFamily: "Montserrat, sans-serif" }}
@@ -156,9 +152,10 @@ export default function VaultPage(): JSX.Element {
                 <br /> Jewelry
               </h3>
 
-              <div 
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="text-md mt-10">
+              <div
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+                className="text-md mt-10"
+              >
                 <p className="mt-4 leading-relaxed text-justify">
                   Sri Lanka, often called the "Gem Island," has been revered for
                   centuries for its breathtaking array of precious stones.
@@ -193,85 +190,90 @@ export default function VaultPage(): JSX.Element {
 
         {/* Key Gemstones */}
         <section className="max-w-6xl mx-auto px-6 mt-8 mb-20">
-          <h3 className="text-center font-serif text-2xl">Key Gemstones</h3>
-          <p className="text-center text-sm mt-2">
+          <h3
+            style={{ fontFamily: "Baskervville, sans-serif" }}
+            className="text-center font-serif text-5xl"
+          >
+            Key
+            <br /> Gemstones
+          </h3>
+          <p
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+            className="text-center text-sm mt-2"
+          >
             Click on a gem to read more.
           </p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-  {GEMS.map((g) => (
-    <button
-      key={g.id}
-      onClick={() => setSelected(g)}
-      className="group relative flex flex-col items-center focus:outline-none"
-    >
-      <div className="relative w-48 h-48 flex items-center justify-center overflow-hidden rounded-xl">
-        {/* Gem Image */}
-        <img
-          src={g.image}
-          alt={g.name}
-          className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-110 group-hover:blur-[2px] group-hover:-scale-x-100"
-        />
+          <div className="mt-15 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20">
+            {GEMS.map((g, index) => {
+              // Determine row: 3 gems per row (for md and above)
+              const isEvenRow = Math.floor(index / 3) % 2 === 1;
 
-        {/* Overlay description */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
-          <p
-            style={{ fontFamily: "Poppins, sans-serif" }}
-            className="text-sm text-gray-800 px-3"
-          >
-            {g.short}
-          </p>
-        </div>
-      </div>
+              return (
+                <div key={g.id} className="relative flex flex-col items-center">
+                  <button
+                    onClick={() =>
+                      setSelected(selected === g.id ? null : g.id)
+                    }
+                    className="group relative flex flex-col items-center focus:outline-none"
+                  >
+                    <div className="relative w-48 h-48 flex items-center justify-center overflow-hidden rounded-xl cursor-pointer">
+                      <img
+                        src={g.image}
+                        alt={g.name}
+                        className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-110 group-hover:blur-[2px] group-hover:-scale-x-100"
+                      />
+                      <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
+                        <p
+                          style={{ fontFamily: "Poppins, sans-serif" }}
+                          className="text-sm text-gray-800 px-3"
+                        >
+                          {g.short}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-lg font-serif text-gray-900">
+                      {g.name}
+                    </div>
+                  </button>
 
-      <div className="mt-4 text-lg font-serif text-gray-900">{g.name}</div>
-    </button>
-  ))}
-</div>
+                  {/* Drawer logic */}
+                  {selected === g.id && (
+                    <div
+                      className={`absolute left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-xl p-4 w-80 z-10 border border-gray-200 animate-fade-in ${
+                        isEvenRow ? "bottom-full mb-4" : "top-full mt-4"
+                      }`}
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                      }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-xl font-serif">{g.name}</h4>
+                        <button
+                          onClick={() => setSelected(null)}
+                          className="text-gray-500 hover:text-gray-800 cursor-pointer"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                      <div className="mt-3 flex justify-center">
+                        <img
+                          src={g.image}
+                          alt={g.name}
+                          className="max-w-[100px] h-auto object-contain"
+                        />
+                      </div>
+                      <p className="mt-3 text-sm leading-relaxed text-justify">
+                        {g.detail}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </section>
 
-        {/* Detail drawer / modal */}
-        {selected && (
-          <div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-6"
-            onClick={() => setSelected(null)}
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="w-full md:w-3/4 lg:w-1/2 bg-white rounded-2xl shadow-2xl p-6 flex flex-col md:flex-row gap-6"
-            >
-              <div className="md:w-1/2 flex items-center justify-center">
-                <img
-                  src={selected.image}
-                  alt={selected.name}
-                  className="max-w-full max-h-80 object-contain"
-                />
-              </div>
-              <div className="md:w-1/2">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-2xl font-serif">{selected.name}</h4>
-                  <button
-                    onClick={() => setSelected(null)}
-                    className="text-gray-500 hover:text-gray-800"
-                    aria-label="Close details"
-                  >
-                    ✕
-                  </button>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-justify">
-                  {selected.detail}
-                </p>
-                <div className="mt-6">
-                  <a href="#" className="text-sm underline">
-                    Read full article
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
         <Footer />
       </div>
     </div>

@@ -49,7 +49,7 @@ const shopDropdown = [
     ],
   },
   {
-    title: "Custom",
+    title: "Bespoke Jewelry",
     image: navbespoke,
     items: [
       { name: "Design Your Own", href: "/gem" }
@@ -89,9 +89,7 @@ export default function Header() {
     setShopDropdownOpen(false);
   };
 
-  const handleShopClick = () => {
-    setShopDropdownOpen(open => !open);
-  };
+
 
   const isActiveLink = (href: string) => {
     return location.pathname === href;
@@ -153,29 +151,38 @@ export default function Header() {
         className="hidden md:flex justify-center space-x-20 text-lg font-medium text-gray-800 pb-3 mt-4 relative">
           {navLinks.map((link) =>
             link.name === "Shop" ? (
-              <div key={link.name} className="relative flex items-center">
-                <button
-                  ref={shopButtonRef}
-                  className={`flex items-center hover:text-yellow-600 cursor-pointer transition-colors duration-200 ${
-                    isActiveLink(link.href) || shopDropdownOpen
-                      ? "text-yellow-600 border-b-2 border-yellow-600"
-                      : "text-gray-800"
-                  }`}
-                  onClick={handleShopClick}
-                >
-                  {link.name}
-                  <IoChevronDown 
-                    className={`ml-1 text-xl transition-transform duration-300 ${
-                      shopDropdownOpen ? "rotate-180" : "rotate-0"
-                    }`}
-                  />
-                </button>
+              <div
+          key={link.name}
+          className="relative flex items-center"
+          onMouseEnter={() => setShopDropdownOpen(true)}
+          onMouseLeave={() => setShopDropdownOpen(false)}
+              >
+          <button
+            ref={shopButtonRef}
+            className={`flex items-center hover:text-yellow-600 cursor-pointer transition-colors duration-200 ${
+              isActiveLink(link.href) || shopDropdownOpen
+                ? "text-yellow-600 border-b-2 border-yellow-600"
+                : "text-gray-800"
+            }`}
+            // Remove onClick for hover behavior
+            type="button"
+            tabIndex={0}
+            aria-haspopup="true"
+            aria-expanded={shopDropdownOpen}
+          >
+            {link.name}
+            <IoChevronDown 
+              className={`ml-1 text-xl transition-transform duration-300 ${
+                shopDropdownOpen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
 
                 {/* Shop Dropdown */}
                 {shopDropdownOpen && (
                   <div
                     ref={dropdownRef}
-                    className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[90vw] max-w-6xl bg-[#FFFEFA] shadow-2xl border border-gray-200 rounded-lg z-50"
+                    className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-[90vw] max-w-6xl bg-white shadow-2xl border border-gray-200 rounded-lg z-50"
                   >
                     <div className="flex w-full">
                       {shopDropdown.map((col, idx) => (
