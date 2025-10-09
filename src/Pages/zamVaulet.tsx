@@ -198,29 +198,36 @@ export default function VaultPage(): JSX.Element {
             Click on a gem to read more.
           </p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {GEMS.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => setSelected(g)}
-                className="group bg-white/60 backdrop-blur-sm p-6 rounded-2xl flex flex-col items-center shadow-md hover:shadow-xl focus:outline-none"
-                aria-label={`Open details for ${g.name}`}
-              >
-                <div className="w-40 h-40 flex items-center justify-center">
-                  <img
-                    src={g.image}
-                    alt={g.name}
-                    className="max-w-full max-h-full object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="mt-4 text-lg font-serif">{g.name}</div>
-                <div className="mt-2 text-sm text-center text-gray-600 hidden group-hover:block">
-                  {g.short}
-                </div>
-              </button>
-            ))}
-          </div>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+  {GEMS.map((g) => (
+    <button
+      key={g.id}
+      onClick={() => setSelected(g)}
+      className="group relative flex flex-col items-center focus:outline-none"
+    >
+      <div className="relative w-48 h-48 flex items-center justify-center overflow-hidden rounded-xl">
+        {/* Gem Image */}
+        <img
+          src={g.image}
+          alt={g.name}
+          className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-110 group-hover:blur-[2px] group-hover:-scale-x-100"
+        />
+
+        {/* Overlay description */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm">
+          <p
+            style={{ fontFamily: "Poppins, sans-serif" }}
+            className="text-sm text-gray-800 px-3"
+          >
+            {g.short}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 text-lg font-serif text-gray-900">{g.name}</div>
+    </button>
+  ))}
+</div>
         </section>
 
         {/* Detail drawer / modal */}
