@@ -4,10 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { motion } from "framer-motion";
 import L from "leaflet";
-import Navbar from "../components/Header";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import Footer from "../components/Footer";
 
 //feature section images
 import slide1 from "../assets/show1.jpg";
@@ -21,7 +19,8 @@ const featuredItems = [
     title: "Salt & Sapphire",
     description:
       "A look inside our showrooms; discover the ambiance artistry, and atmosphere of our signature spaces.",
-    AddressText: "Colombo Flagship Store:52 Ananda Coomarasamy Mawatha, Colombo 03",
+    AddressText:
+      "Colombo Flagship Store:52 Ananda Coomarasamy Mawatha, Colombo 03",
     image: slide1,
   },
   {
@@ -181,236 +180,232 @@ export default function Showrooms() {
 
   return (
     <div className="bg-white text-gray-800">
-      <div>
-        <Navbar />
-
-        {/* Hero Section */}
-        <section className="relative">
-          <img
-            src="src/assets/SH OGF.png"
-            alt="Showroom Interior"
-            className="w-full h-[90vh] object-cover"
-          />
-          <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-20 text-[#FFFEFA]">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              style={{ fontFamily: "Baskervville, sans-serif" }}
-              className="text-4xl md:text-7xl font-light mb-10"
-            >
-              Experience Our
-              <br /> Showrooms
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="max-w-sm text-lg leading-relaxed"
-            >
-              At ZAM Gems, we constantly
-              <br /> strive to innovate and find
-              <br /> new ways to offer you an
-              <br />
-              exemplary experience at our
-              <br /> showrooms located across
-              <br /> the nation.
-              <br />
-              Our showroos showcase a<br /> diverse range of products
-              <br /> from our colored gemstones
-              <br /> to a wide array of fine jewelry
-              <br /> that are marketed and
-              <br /> handled meticulously by our
-              <br /> well-trained staff.
-            </motion.p>
-          </div>
-        </section>
-
-        {/* Metrics Section */}
-        <section
-          style={{ fontFamily: "Montserrat, sans-serif" }}
-          className="py-25 bg-white text-center grid grid-cols-1 sm:grid-cols-3 md:mt-4 gap-10 max-w-7xl mx-auto"
-        >
-          <div>
-            <h3 className="text-7xl font-light mb-2">15+</h3>
-            <p className="uppercase tracking-wide text-sm font-bold">
-              Showrooms
-            </p>
-            <p className="text-gray-900 mt-8 font-light">
-              Across Colombo & Sri Lanka
-            </p>
-          </div>
-          <div>
-            <p className="uppercase tracking-wide text-sm font-bold">Since</p>
-            <h3 className="text-7xl font-light mb-2">1976</h3>
-            <p className="text-gray-900 mt-10 font-light">
-              Over 45 years of trust & tradition
-            </p>
-          </div>
-          <div>
-            <p className="uppercase tracking-wide text-sm font-bold">In</p>
-            <h3 className="text-7xl font-light mb-2">5</h3>
-            <p className="uppercase tracking-wide text-sm font-bold">
-              Star Hotels
-            </p>
-            <p className="text-gray-900 mt-3 font-light">
-              Luxury at your convenience
-            </p>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section
-          style={{ fontFamily: "Baskervville, sans-serif" }}
-          className="px-6 md:px-40 pt-16 grid grid-cols-1 md:grid-cols-3 gap-30 items-center"
-        >
-          <div>
-            <h2 className="text-7xl font-light mb-4 mt-[-340px]">
-              Find Us On<br /> The Map
-            </h2>
-            <p
-              style={{ fontFamily: "montserrat, sans-serif" }}
-              className="text-gray-600 text-md mb-6 text-left"
-            >
-              Discover your nearest showroom at<br /> your convenience.
-            </p>
-          </div>
-          <div className="relative h-[700px] w-[900px] overflow-hidden shadow-lg">
-            <MapContainer
-              center={[7.5, 80.5]}
-              zoom={9.5}
-              scrollWheelZoom={false}
-              className="h-full w-full z-0"
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {locations.map((loc) => (
-                <Marker key={loc.id} position={[loc.lat, loc.lng]}>
-                  <Popup>
-                    <strong>{loc.name}</strong>
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          </div>
-        </section>
-
-        {/* All Showrooms List */}
-        <section
-          style={{ fontFamily: "Baskervville, sans-serif" }}
-          className="px-6 md:px-40 py-16 bg-white "
-        >
-          <h2 className="text-6xl font-regular mb-6">...Or,</h2>
-          <h2 className="text-6xl mt-10 font-regular mb-6">
-            View All Showrooms At A Glance
-          </h2>
-          <ul
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-            className="space-y-6 text-gray-700 p-6 pt-15"
+      {/* Hero Section */}
+      <section className="relative">
+        <img
+          src="src/assets/SH OGF.png"
+          alt="Showroom Interior"
+          className="w-full h-[90vh] object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-20 text-[#FFFEFA]">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{ fontFamily: "Baskervville, sans-serif" }}
+            className="text-4xl md:text-7xl font-light mb-10"
           >
+            Experience Our
+            <br /> Showrooms
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+            className="max-w-sm text-lg leading-relaxed"
+          >
+            At ZAM Gems, we constantly
+            <br /> strive to innovate and find
+            <br /> new ways to offer you an
+            <br />
+            exemplary experience at our
+            <br /> showrooms located across
+            <br /> the nation.
+            <br />
+            Our showroos showcase a<br /> diverse range of products
+            <br /> from our colored gemstones
+            <br /> to a wide array of fine jewelry
+            <br /> that are marketed and
+            <br /> handled meticulously by our
+            <br /> well-trained staff.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Metrics Section */}
+      <section
+        style={{ fontFamily: "Montserrat, sans-serif" }}
+        className="py-25 bg-white text-center grid grid-cols-1 sm:grid-cols-3 md:mt-4 gap-10 max-w-7xl mx-auto"
+      >
+        <div>
+          <h3 className="text-7xl font-light mb-2">15+</h3>
+          <p className="uppercase tracking-wide text-sm font-bold">Showrooms</p>
+          <p className="text-gray-900 mt-8 font-light">
+            Across Colombo & Sri Lanka
+          </p>
+        </div>
+        <div>
+          <p className="uppercase tracking-wide text-sm font-bold">Since</p>
+          <h3 className="text-7xl font-light mb-2">1976</h3>
+          <p className="text-gray-900 mt-10 font-light">
+            Over 45 years of trust & tradition
+          </p>
+        </div>
+        <div>
+          <p className="uppercase tracking-wide text-sm font-bold">In</p>
+          <h3 className="text-7xl font-light mb-2">5</h3>
+          <p className="uppercase tracking-wide text-sm font-bold">
+            Star Hotels
+          </p>
+          <p className="text-gray-900 mt-3 font-light">
+            Luxury at your convenience
+          </p>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section
+        style={{ fontFamily: "Baskervville, sans-serif" }}
+        className="px-6 md:px-40 pt-16 grid grid-cols-1 md:grid-cols-3 gap-30 items-center"
+      >
+        <div>
+          <h2 className="text-7xl font-light mb-4 mt-[-340px]">
+            Find Us On
+            <br /> The Map
+          </h2>
+          <p
+            style={{ fontFamily: "montserrat, sans-serif" }}
+            className="text-gray-600 text-md mb-6 text-left"
+          >
+            Discover your nearest showroom at
+            <br /> your convenience.
+          </p>
+        </div>
+        <div className="relative h-[700px] w-[900px] overflow-hidden shadow-lg">
+          <MapContainer
+            center={[7.5, 80.5]}
+            zoom={9.5}
+            scrollWheelZoom={false}
+            className="h-full w-full z-0"
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
             {locations.map((loc) => (
-              <li key={loc.id} className="flex items-start gap-5">
-                <IoLocationOutline className="text-gray-500" size={30} />
-                <div>
-                  <a
-                    href={loc.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" text-gray-600 font-medium hover:underline "
-                  >
-                    {loc.name}
-                  </a>
-                </div>
-              </li>
+              <Marker key={loc.id} position={[loc.lat, loc.lng]}>
+                <Popup>
+                  <strong>{loc.name}</strong>
+                </Popup>
+              </Marker>
             ))}
-          </ul>
-        </section>
+          </MapContainer>
+        </div>
+      </section>
 
-        {/* Featured Section – SLIDE animation */}
-        <section className="relative flex flex-col md:flex-row w-full bg-white overflow-hidden md:h-[700px]">
-          {/* Left Text */}
-          <div className="flex flex-col justify-center mt-10 px-6 md:px-20 lg:px-28 w-full md:w-1/2 text-gray-900">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              style={{ fontFamily: "Baskervville, serif" }}
-              className="text-4xl md:text-6xl font-light mb-6"
-            >
-              {featuredItems[current].title}
-            </motion.h2>
+      {/* All Showrooms List */}
+      <section
+        id="locations"
+        style={{ fontFamily: "Baskervville, sans-serif" }}
+        className="px-6 md:px-40 py-16 bg-white "
+      >
+        <h2 className="text-6xl font-regular mt-11 mb-6">...Or,</h2>
+        <h2 className="text-6xl mt-10 font-regular mb-6">
+          View All Showrooms At A Glance
+        </h2>
+        <ul
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="space-y-6 text-gray-700 p-6 pt-15"
+        >
+          {locations.map((loc) => (
+            <li key={loc.id} className="flex items-start gap-5">
+              <IoLocationOutline className="text-gray-500" size={30} />
+              <div>
+                <a
+                  href={loc.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" text-gray-600 font-medium hover:underline "
+                >
+                  {loc.name}
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-              className="text-lg md:text-sm mb-10 leading-relaxed max-w-sm"
-            >
-              {featuredItems[current].description}
-            </motion.p>
+      {/* Featured Section – SLIDE animation */}
+      <section className="relative flex flex-col md:flex-row w-full bg-white overflow-hidden md:h-[700px]">
+        {/* Left Text */}
+        <div className="flex flex-col justify-center mt-10 px-6 md:px-20 lg:px-28 w-full md:w-1/2 text-gray-900">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{ fontFamily: "Baskervville, serif" }}
+            className="text-4xl md:text-6xl font-light mb-6"
+          >
+            {featuredItems[current].title}
+          </motion.h2>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => (window.location.href = "/gems")}
-              className="px-6 py-3 border border-black text-black font-medium hover:bg-gray-100 transition-colors duration-300 w-fit"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              {featuredItems[current].AddressText}
-            </motion.button>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+            className="text-lg md:text-sm mb-10 leading-relaxed max-w-sm"
+          >
+            {featuredItems[current].description}
+          </motion.p>
 
-            {/* Dots */}
-            <div className="flex mt-8 space-x-3">
-              {featuredItems.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`w-7 h-7 rounded-full ${
-                    i === current ? "bg-black" : "border border-black"
-                  } transition-all duration-300`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => (window.location.href = "/gems")}
+            className="px-6 py-3 border border-black text-black font-medium hover:bg-gray-100 transition-colors duration-300 w-fit"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
+            {featuredItems[current].AddressText}
+          </motion.button>
+
+          {/* Dots */}
+          <div className="flex mt-8 space-x-3">
+            {featuredItems.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-7 h-7 rounded-full ${
+                  i === current ? "bg-black" : "border border-black"
+                } transition-all duration-300`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Right Image Slider (slide instead of fade) */}
+        <div className="relative w-full md:w-[1300px] h-[400px] md:h-full overflow-hidden">
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {featuredItems.map((item) => (
+              <img
+                key={item.id}
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover flex-shrink-0"
+              />
+            ))}
           </div>
 
-          {/* Right Image Slider (slide instead of fade) */}
-          <div className="relative w-full md:w-[1300px] h-[400px] md:h-full overflow-hidden">
-            <div
-              className="flex transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateX(-${current * 100}%)` }}
-            >
-              {featuredItems.map((item) => (
-                <img
-                  key={item.id}
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover flex-shrink-0"
-                />
-              ))}
-            </div>
-
-            {/* Chevron Controls */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-5 top-1/2 -translate-y-1/2 "
-            >
-              <SlArrowLeft className="w-25 h-auto text-gray-200 opacity-60" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-5 top-1/2 -translate-y-1/2 "
-            >
-              <SlArrowRight className="w-25 h-auto text-gray-200 opacity-60" />
-            </button>
-          </div>
-        </section>
-      </div>
-      <Footer />
+          {/* Chevron Controls */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-5 top-1/2 -translate-y-1/2 "
+          >
+            <SlArrowLeft className="w-25 h-auto text-gray-200 opacity-60 cursor-pointer" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-5 top-1/2 -translate-y-1/2 "
+          >
+            <SlArrowRight className="w-25 h-auto text-gray-200 opacity-60 cursor-pointer" />
+          </button>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../components/Header";
-import Footer from "../components/Footer";
+
 
 const ZamFamilyTribute: React.FC = () => {
   const items = [
@@ -40,8 +39,6 @@ const ZamFamilyTribute: React.FC = () => {
   ];
 
   return (
-    <div>
-      <Navbar />
 
       <div className="bg-white text-gray-500 py-10 ">
         {/* Header */}
@@ -100,8 +97,6 @@ const ZamFamilyTribute: React.FC = () => {
           </p>
         </div>
       </div>
-      <Footer />
-    </div>
   );
 };
 

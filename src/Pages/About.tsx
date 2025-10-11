@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const chairmanPortrait = "src/assets/Founder.png";
 const vintagePhoto1 = "src/assets/about1.png";
@@ -8,11 +6,10 @@ const heroImage = "src/assets/Abouthero.png";
 
 function App() {
   return (
-    <div>
-      <Header />
+    
       <div className="font-serif text-gray-900 bg-white ">
         {/* Hero Section */}
-        <section className="relative w-full h-[28rem] md:h-[32rem] lg:h-[38rem]">
+        <section className="relative w-full h-[28rem] md:h-[32rem] lg:h-[39rem]">
           <img
             src={heroImage}
             alt="Gemstones being handled by craftsman"
@@ -225,8 +222,6 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer />
-    </div>
   );
 }
 

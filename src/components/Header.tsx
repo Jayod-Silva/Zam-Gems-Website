@@ -104,7 +104,7 @@ export default function Header() {
         className="flex items-center justify-between px-3 md:px-30 py-3 md:py-4">
           {/* Left: Find a Store */}
           <Link
-            to="/find-store"
+            to="/showrooms#locations"
             className="hidden md:flex items-center text-lg text-gray-800 hover:text-yellow-600 mt-5"
           >
             <IoLocationOutline className="mr-2 text-3xl" /> 
@@ -127,7 +127,7 @@ export default function Header() {
 
           {/* Right: Contact */}
           <Link
-            to="/contact-us"
+            to="/contact"
             className="hidden md:flex items-center text-lg text-gray-800 hover:text-yellow-600 mt-5"
             onClick={handleLinkClick}
           >

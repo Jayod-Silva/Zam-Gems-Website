@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
 import heroImg from "../assets/hero-img.png";
 import bespokeImg from "../assets/bespoke.png";
-import Navbar from "../components/Header";
 import Testimonials from "../components/Testimonials-comp";
 import LogoLoop from "../components/Logoloop";
-import Footer from "../components/Footer";
+
 
 //feature section images
 import slide1 from "../assets/salt-saphire.png";
@@ -237,7 +236,7 @@ export default function Home() {
       setCurrentSlide((prev) =>
         prev === featuredItems.length - 1 ? 0 : prev + 1
       );
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -315,9 +314,8 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#FFFEFA] min-h-screen scrollbar-hide">
-      <Navbar />
-      <div className="w-full">
+
+      <div className="bg-gray-40 min-h-screen scrollbar-hide w-full">
         {/* Hero Section */}
         <section className="absolute md:mt-20 left-0 top-10 w-full overflow-hidden h-[600px] md:h-[820px]">
           <img
@@ -634,7 +632,5 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
   );
 }
